@@ -312,78 +312,105 @@ jvm tells the compiler to convert the source code(in text form)
 into byte code(01 form). jre provides the environment where the
 source code run and executed.
 ```
-Why java is called better memory management language? because it
-automatically performs the garbage collection, thus it is memory
-efficient language What is javac? it is java compiler in that converts
-source code(text form, .java file) into bytecode(.class file) It is must
-to implement the abstract methods of interface in the implementing class
-whether abstract keyword is written or not, but not necessary to
-implement default and static methods.
+**Q100:** Why java is called better memory management language?  
+```
+Because it automatically performs the garbage collection, thus it is
+memory efficient language
+```
+**Q101:** What is javac?
+```
+It is java compiler in that converts
+source code(text form, .java file) into bytecode(.class file)
+```
+**Q102:** How to implement method of interface?  
+```
+It is must to implement the abstract methods of interface in the
+implementing class whether abstract keyword is written or not,
+but not necessary to implement default and static methods.
+```
+**Q103:** What are checked and unchecked exceptions?  
+**Q104:** Can we have more than one public class in same file?  
+```
+No, only one class should be public that
+matches the file name, other should be without public keyword
+```
+**Q105:** Is JDBC is part of java EE or java SE?  
+**Q106:** What is difference between actual and formal parameters?  
+**Q107:** What are literals?  
+**Q108:** What is String constant pool(scp)?  
+**Q109:** How garbage collector works?  
+```
+When String is not referring to the object, then the object is
+automatically collected by GC. String is a reference type,
+String name = "khan"; here name is not storing the value like
+int = 5; etc., name is only referring or pointing towards "khan"
+object not storing the value.
+```
+**Q110:** What is supplier interface in java?  
+**Q111:** What is consumer interface in java?  
+**Q112:** What is predicate?  
+**Q113:** What are fail fast and fail safe iterator?  
+**Q114:** What is the result of character concatenation in java?  
+```
+like 'j' + 'a' + 'v' +'a';
+it will generate numeric output
+```
+**Q115:** What is difference between jdbc and jpa?  
+**Q116:** What is factory design pattern in java?  
+**Q117:** What is metaspace in java?  
+```
+Metaspace is a new memory space -- starting
+from the Java 8 version; it has replaced the older PermGen memory
+space. The most significant difference is how it handles memory
+allocation. Specifically, this native memory region grows
+automatically by default.
+```
+**Q118:** What is try with resources in java?  
+**Q119:** What is idempotent in api?  
+**Q120:** Can we override a method multiple times in java?  
+```
+No, only subclass can implement the parents class method
+``` 
+**Q121:** What are the rules for method overloading?  
+* Must:  
+  * The method names must be the same.
+  * The parameter types must be different.
+* May differ:  
+  * The return types can be the same or different.
+  * The access modifiers can be the same or different.
+  * The exceptions can be the same or different.
 
-What are checked and unchecked exceptions? Can we have more than one
-public class in same file? No, only one class should be public that
-matches the file name, other should be without public keyword Is JDBC is
-part of java EE or java SE? it is a part of java SE Java EE provide apis
-for running large scale applications like seperate client, business and
-enterprise layers it has jsp, dependency injection, authentication etc
-where as java SE is normal java specifications that consists of virtual
-machines(jvm, jre, jdk), runtime envionment, basics oop concepts, swing
-etc If we want to use the two classes(package) within the same class
-name(main file class name), we often write in like class nammee{ // this
-the class that is occuring in the same file name java.util.Date date;
-
-What is difference between actual and formal parameters? What are
-literals? What is String constant pool(scp)? How garbage collector
-works? When String is not refering to the object, then the object is
-automatically collected by GC. String is a reference type, String name =
-"khan"; here name is not storing the value like int = 5; etc, name is
-only refering or pointing towards "khan" object not storing the value.
-What is supplier interface in java? What is consumer interface in java?
-What is predicate? What are fail fast and fail safe iterator? What is
-the result of character conactenation in java? like 'j' + 'a' + 'v' +
-'a'; it will generate numeric output What is difference between jdbc and
-jpa? What is factory design pattern in java?
-
-What is metaspace in java? Metaspace is a new memory space -- starting
-from the Java 8 version; it has replaced the older PermGen memory space.
-The most significant difference is how it handles memory allocation.
-Specifically, this native memory region grows automatically by default.
-in simple, there are three terms that are most commonly use in data
-collection, these are List, set and map Define these, their differences
-and their implementing classes.
-
-What is try with resources in java? What is idempotent in api? Can we
-override a method multiple times in java? No, only subclass can
-implement the parents class method What are the rules for method
-overloading? The method names must be the same. The parameter types must
-be different. The return types can be the same or different. The access
-modifiers can be the same or different. The exceptions can be the same
-or different.
-
-What is difference between == and .equals()? Is java pass by value or
-pass by reference? In summary, Java uses "pass by value" for primitive
-types and "pass by value of the reference" for objects. but overall java
-is strictly pass by value. What is difference between stack and heap
-memory?
-
-Is String builder, String buffer and String all are immutable? No, only
-String is immutable, String builder and buffer are mutable(changeable)
-
-What is continue keyword in java? What is serialization and
-deserialization in java? Serialization is a mechanism of converting the
-state of an object into a byte stream. Deserialization is the reverse
-process where the byte stream is used to recreate the actual Java object
-in memory. This mechanism is used to persist the object. The byte stream
-created is platform independent. What is byte stream in java? Byte
-streams are used to perform input and output of 8-bit bytes. What is
-difference between static and transient in java?
-
-What is static block in java? In Java, a static block executes code
-before the object initialization. and it runs without creating instance
-of that class, it runs when the class loads into the memory The static
-blocks always execute first before the main() method in Java because the
-compiler stores them in memory at the time of class loading and before
-the object creation.
+**Q122:** What is difference between == and .equals()?  
+**Q123:** Is java pass by value or pass by reference?  
+```
+In summary, Java uses "pass by value" for primitive
+types and "pass by value of the reference" for objects.
+but overall java is strictly pass by value.
+``` 
+**Q124:** What is difference between stack and heap memory?  
+**Q125:** Is String builder, String buffer and String all are immutable?  
+**Q126:** What is serialization and deserialization in java?  
+```
+Serialization is a mechanism of converting the state of an object
+into a byte stream. Deserialization is the reverse process where
+the byte stream is used to recreate the actual Java object in
+memory. This mechanism is used to persist the object. The byte
+stream created is platform independent.
+```
+**Q127:** What is byte stream in java?  
+```
+Byte streams are used to perform input and output of 8-bit bytes.
+```
+**Q128:** What is difference between static and transient in java?  
+**Q129:** What is static block in java?  
+```
+In Java, a static block executes code before the object
+initialization, and it runs without creating instance of that
+class, it runs when the class loads into the memory. The static
+blocks always execute first before the main() method in Java
+because the compiler stores them in memory at the time of class
+loading and before the object creation.
+```
 
 Can we define a method in main class method? What is difference between
 substring and subsequence? What is the use of transactional annotation
