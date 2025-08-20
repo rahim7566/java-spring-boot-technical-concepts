@@ -412,97 +412,155 @@ because the compiler stores them in memory at the time of class
 loading and before the object creation.
 ```
 
-Can we define a method in main class method? What is difference between
-substring and subsequence? What is the use of transactional annotation
-in spring boot? the @Transactional annotation ensures that the for
-example updateUserDetails method runs within a transaction. If an
-exception is thrown during the execution of this method, the transaction
-will be rolled back, and any changes made to the database will be
-undone. Should we use transaction annotation on a private method? What
-is propagation in transactional?
-
-What is the git command that is used to rollback and dicard changes to
-specific commit? it is git reset --hard \[commit-hash\]
-
-What is super keyword meaning in the constructor? extending class
-constructor contains super invokes the parent class constructor and if
-it is not extending then it is calling object class that is the parent
-of all java classes
-
-Very important feature Passing interface as a parameter in method call
-in java is lead to polymorphism What is workload automation? What is
-spring batch? How to create infinite loops in java? (for, while, do)
-
-What is association? An Association can be defined as a relationship
+**Q130:** Can we define a method in main class method?  
+**Q131:** What is difference between substring and subsequence?  
+**Q132:** What is the use of transactional annotation in spring boot?  
+**Q133:** Should we use transaction annotation on a private method?  
+**Q134:** What is propagation in transactional?  
+**Q135:** What is the git command that is used to rollback and discard changes to
+specific commit?  
+**Q136:** What is super keyword meaning in the constructor?  
+```
+Extending class constructor contains super invokes the parent
+class constructor and if it is not extending then it is calling
+object class that is the parent of all java classes.
+```
+**Q137:** Important feature of polymorphism:
+```
+Passing interface as a parameter in method call
+in java is lead to polymorphism
+```
+**Q138:** What is workload automation?  
+**Q139:** What is spring batch?  
+**Q140:** How to create infinite loops in java? (for, while, do)  
+**Q141:** What is association? 
+```
+An Association can be defined as a relationship
 that has no ownership over another. For example, a person can be
 associated with multiple banks, and a bank can be related to various
-people, but no one can own the other. What is aggregation? The term
-aggregation refers to the relationship between two classes best
-described as a "whole/part" and "has-a" relationship. It contains the
-reference to another class and is said to have ownership of that class.
+people, but no one can own the other.
+``` 
+**Q142:** What is aggregation?  
+```
+The term aggregation refers to the relationship between two
+classes best described as a "whole/part" and "has-a" relationship.
+It contains the reference to another class and is said to have
+ownership of that class.
+```
+**Q143:** What is classloader?  
+**Q144:** Can a thread restart after dead state?  
+**Q145:** What is java virtual machine?
+```
+Java virtual machine is a platform and a specification provides
+runtime environment for java code to be executed independent of
+an operating system(means it is platform independent) and jre is
+an implementation fo that specification. jre provides class tools
+and libraries and contain standalone jvm. jre provides run time
+environment for code to be executed. Where a class code converted
+into bytecode and runs. jre includes toolkits, libraries etc.
+Java development kit includes jre and code libraries and compilers.
 
-What is classloader? When java program runs it is first loaded by
-classloader in jvm Can a thread restart after dead state? no a thread
-cannot be restarted after dead state Java virtul machine is a platform
-and a specification provides runtime environment for java code to be
-executed independent of an operating system(means it is platform
-independent) and jre is an implementation fo that specification. jre
-provides class tools and libraries and contain standalone jvm. jre
-provides run time environment for code to be executed. Where a class
-code converted into bytecode and runs. jre includes toolkits, libraries
-etc. java development kit includes jre and code libraries and compilers
-JDK │ ├── JRE │ ├── JVM │ └── Core Java Libraries │ └── Java Compiler &
-Development Tools
+Java Virtual Machine (JVM) encompasses several important concepts
+and components that play a crucial role in the execution of Java
+programs. Here are some of the key concepts:
 
-What are the types of garbage collectors in jvm? Serial garbage
-collector, Parallel garbage collector, Concurrent Mark and Sweep Garbage
-collector, G1 garbage collector, Z garbage collector. What are the
-important concepts in jvm? In addition to garbage collectors, the Java
-Virtual Machine (JVM) encompasses several important concepts and
-components that play a crucial role in the execution of Java programs.
-Here are some of the key concepts: Classloader: Responsible for loading
-classes into memory. The JVM uses different classloaders (e.g.,
-Bootstrap, Extension, Application) to load classes from different
-sources (e.g., system libraries, classpath directories). Just-In-Time
-(JIT) Compiler: Transforms Java bytecode into native machine code for
-improved execution performance. It dynamically compiles parts of your
-program that are frequently executed. Java Heap: The runtime data area
-where objects are allocated. It's divided into the Young Generation, Old
-Generation, and Metaspace (or PermGen in older versions of Java). Java
-Stack: Stores method-specific data like local variables and method call
-information. Each thread has its own stack. Native Interface (JNI):
-Allows Java code to call native methods written in other languages
-(e.g., C or C++). Java Native Interface (JNI): Enables Java applications
-to interact with native libraries and code written in other programming
-languages. Thread Management: The JVM is responsible for managing
-threads, allowing for concurrent execution of Java programs. Execution
-Engine: Executes compiled Java bytecode. It includes the Interpreter
-(which directly executes bytecode) and the JIT Compiler (which compiles
-bytecode into native code for improved performance). Method Area (or
-PermGen or Metaspace): Stores metadata about classes and methods. It
-also stores static fields and constants. Runtime Data Areas: These
-include the Method Area, Java Heap, Java Stack, and Native Method Stack.
-They represent the memory spaces where data and code are stored during
-program execution. Java Virtual Machine Tool Interface (JVMTI): Provides
-a way for tools to monitor and instrument running Java applications.
-It's used for profiling, debugging, and monitoring. Security Manager:
-Controls access to system resources by untrusted code. It's used for
-security and sandboxing. Memory Management: The JVM handles memory
-allocation and garbage collection to manage the lifecycle of objects.
-Exception Handling: Java's exception handling mechanism is an integral
-part of the JVM. It allows programs to gracefully handle errors and
-exceptional conditions. Profiler: A tool used for monitoring the
-performance of a Java application. It can provide insights into CPU
-usage, memory allocation, and other metrics.
+ --> Classloader: Responsible for loading classes into memory.
+     The JVM uses different classloaders (e.g. Bootstrap, Extension,
+     Application) to load classes from different sources
+     (e.g. system libraries, classpath directories).
 
-What is performance tuning in jvm? what are Bootstrap class loader
-Extensions class loader System class loader in jvm? our code that is
-written in english like syntax is loaded by system class loader Boot
-class loader is main parent of the class loading hirarichy What is race
-condition in threads? What is deadlock, livelock, starvation, thread
-interference, priority inversion and atomicity violations in threads?
-What is concurrent and synchronized?
+ --> Just-In-Time:
+     (JIT) Compiler transforms Java bytecode into native machine
+     code for improved execution performance. It dynamically
+     compiles parts of your program that are frequently executed.
+     
+ --> Java Heap:
+     The runtime data area where objects are allocated.
+     It's divided into the Young Generation, Old Generation 
+     and Metaspace (or PermGen in older versions of Java).
+     
+ --> Java Stack:
+     Stores method-specific data like local variables and method
+     call information. Each thread has its own stack.
+     
+ --> Native Interface (JNI):
+     Allows Java code to call native methods written in other
+     languages (e.g. C or C++).
+     
+ --> Java Native Interface (JNI):
+     Enables Java applications to interact with native libraries
+     and code written in other programming languages.
+     
+ --> Thread Management:
+     The JVM is responsible for managing threads, allowing for
+     concurrent execution of Java programs.
+     
+ --> Execution Engine:
+     Executes compiled Java bytecode. It includes the Interpreter
+     (which directly executes bytecode) and the JIT Compiler
+     (which compiles bytecode into native code for improved
+     performance).
+     
+ --> Method Area (or PermGen or Metaspace):
+     Stores metadata about classes and methods. It also stores
+     static fields and constants.
+     
+ --> Runtime Data Areas:
+     These include the Method Area, Java Heap, Java Stack, and
+     Native Method Stack. They represent the memory spaces where
+     data and code are stored during program execution.
+     
+ --> Java Virtual Machine Tool Interface (JVMTI):
+     Provides a way for tools to monitor and instrument running
+     Java applications. It's used for profiling, debugging
+     and monitoring.
+     
+ --> Security Manager:
+     Controls access to system resources by untrusted code.
+     It's used for security and sandboxing.
+     
+ --> Memory Management:
+     The JVM handles memory allocation and garbage collection
+     to manage the lifecycle of objects.
+     
+ --> Exception Handling:
+     Java's exception handling mechanism is an integral part of
+     the JVM. It allows programs to gracefully handle errors and
+     exceptional conditions.
+     
+ --> Profiler:
+     A tool used for monitoring the performance of a Java application.
+     It can provide insights into CPU usage, memory allocation
+     and other metrics.
 
+JDK
+│
+├── JRE
+│   ├── JVM
+│   └── Core Java Libraries
+│
+└── Java Compiler & Development Tools
+```
+**Q146:** What are the types of garbage collectors in jvm?  
+* Serial garbage collector
+* Parallel garbage collector
+* Concurrent Mark and Sweep Garbage collector
+* G1 garbage collector 
+* Z garbage collector  
+
+**Q147:** What is performance tuning in jvm?  
+**Q148:** What are Bootstrap class loader, Extensions class loader and
+System class loader in jvm?  
+**Q149:** What is race condition in threads?  
+**Q150:** Define
+   * deadlock?
+   * livelock?
+   * starvation?
+   * thread interference?
+   * priority inversion?
+   * atomicity violations?  
+
+**Q145:** What is concurrent and synchronized?  
 What are the important concepts of design patterns? Singelton: only one
 instance will be created Factory: Factory Pattern is focused on object
 creation, providing a flexible way to create objects without specifying
@@ -909,3 +967,4 @@ Introduced In Type Runnable No No Yes No Java 1.0 Interface
 Callable`<V>`{=html} Yes Yes Yes Yes (via Future) Java 5 Interface
 Future`<V>`{=html} Yes (via get) No (itself doesn't throw) Yes Yes Java
 5 Interface CompletableFuture`<V>`{=html} Yes Yes Yes Yes Java 8 Class
+What is saga pattern?
