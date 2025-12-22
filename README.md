@@ -561,38 +561,51 @@ System class loader in jvm?
    * atomicity violations?  
 
 **Q145:** What is concurrent and synchronized?  
-What are the important concepts of design patterns? Singelton: only one
-instance will be created Factory: Factory Pattern is focused on object
-creation, providing a flexible way to create objects without specifying
-their concrete classes. for example shape is interface Shape shape = new
-square(); Shape shape = new circle(); etc Adapter: like two chargers,
-one is compitable and other is not so a basic interface and two classes
-one is compitable other is not so not compitable class calls the method
-of compitable class Strategy: it is used most for algorithms one
-interface and different classes that implements and have their own
-methods for example sorting
+**Q146:** What are the important concepts of design patterns?
+```
+Singelton: Only one instance will be created.
+```
+```
+Factory: Factory Pattern is focused on object creation, providing a flexible
+way to create objects without specifying their concrete classes.
+for example shape is interface Shape shape = new square(); Shape shape = new circle(); etc
+```
+```
+Adapter: like two chargers, one is compitable and other is not so a basic
+interface and two classes one is compitable other is not so not compitable
+class calls the method of compitable class.
+```
+```
+Strategy: it is used most for algorithms one interface and different classes
+that implements and have their own methods for example sorting.
+```
 
-File not found checked exceptions subclasses are: FileNotFoundException
-IOException EOFException SocketException SQLException
+File not found checked exceptions subclasses are:
+> FileNotFoundException, IOException, EOFException, SocketException, SQLException.
 
-What is dependency injection using constructor in java? What are three
-primary dependency injection types in java? 1 constructor injection(when
-needed for the whole class) 2 setter injection(when needed for partial
-dependency in the classes) 3 method injection(when needed in the method
-scope only) pom dependency is relatively different because it provides
-the external libraries that are needed to use in our project Why should
-we use setter methods or constructors?
+**Q147:** What is dependency injection using constructor in java?
+**Q148:** What are three primary dependency injection types in java?
+```
+1 --> constructor injection(when needed for the whole class)
+2 --> setter injection(when needed for partial dependency in the classes)
+3 --> method injection(when needed in the method scope only)
+pom dependency is relatively different because it provides
+the external libraries that are needed to use in our project
+```
+**Q149:** Why should we use setter methods or constructors?
+Important steps that are required in microsevices:
+> Load balancers, Service registry, failed fast, API gateway.
 
-Important steps that are required in microsevices: Load balancers
-Service registry failed fast api gateway
+**Q150:** What is difference between spring jpa and spring data jpa?
+> We use rest controller that is composed of (controller and response body)
+> for response in json or xml and if we simply use controller annotation with
+> no response body it will send response in string that is resolved by view resolver.
 
-What is difference between spring jpa and spring data jpa? We use rest
-controller that is composed of (controller and response body) for
-response in json or xml and if we simply use controller annotation with
-no response body it will send response in string that is resolved by
-view resolver What are the main important features in java 17? 1 Records
-2 Stream.toList() 3 new switch expressions 4 text blocks for long
-strings and remove "+" on every line break.
+**Q151:** What are the main important features in java 17?
+* Records
+* Stream.toList()
+* New switch expressions
+* Text blocks for long strings and remove "+" on every line break.
 
 What are the sealed classes and interfaces in java? What is "permit"
 keyword in java? What is view resolver in spring mvc? Eureka server
