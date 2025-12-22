@@ -561,7 +561,7 @@ System class loader in jvm?
    * atomicity violations?  
 
 **Q145:** What is concurrent and synchronized?  
-**Q146:** What are the important concepts of design patterns?
+**Q146:** What are the important concepts of design patterns?  
 ```
 Singelton: Only one instance will be created.
 ```
@@ -583,8 +583,8 @@ that implements and have their own methods for example sorting.
 File not found checked exceptions subclasses are:
 > FileNotFoundException, IOException, EOFException, SocketException, SQLException.
 
-**Q147:** What is dependency injection using constructor in java?
-**Q148:** What are three primary dependency injection types in java?
+**Q147:** What is dependency injection using constructor in java?  
+**Q148:** What are three primary dependency injection types in java?  
 ```
 1 --> constructor injection(when needed for the whole class)
 2 --> setter injection(when needed for partial dependency in the classes)
@@ -592,79 +592,99 @@ File not found checked exceptions subclasses are:
 pom dependency is relatively different because it provides
 the external libraries that are needed to use in our project
 ```
-**Q149:** Why should we use setter methods or constructors?
-Important steps that are required in microsevices:
+**Q149:** Why should we use setter methods or constructors?   
+Important steps that are required in microsevices: 
 > Load balancers, Service registry, failed fast, API gateway.
 
-**Q150:** What is difference between spring jpa and spring data jpa?
+**Q150:** What is difference between spring jpa and spring data jpa?  
 > We use rest controller that is composed of (controller and response body)
 > for response in json or xml and if we simply use controller annotation with
 > no response body it will send response in string that is resolved by view resolver.
 
-**Q151:** What are the main important features in java 17?
+**Q151:** What are the main important features in java 17?  
 * Records
 * Stream.toList()
 * New switch expressions
 * Text blocks for long strings and remove "+" on every line break.
 
-What are the sealed classes and interfaces in java? What is "permit"
-keyword in java? What is view resolver in spring mvc? Eureka server
-provided by netflix to discover each other services in an ecosystem
+**Q152:** What are the sealed classes and interfaces in java?   
+**Q153:** What is "permit" keyword in java?   
+**Q154:** What is view resolver in spring mvc?   
+```
+Eureka server provided by netflix to discover each other services in an ecosystem
 either by hardcoding service urls or by using third party tools or
-service discovery mechanism like DNS What is diff between instance
-variables and class variables? What is rest assured? What is meant by
-coding/programming to the interface? What is method chaining? What is
-time complexity and space complexity?
-
-How to pick a commit from one branch and add it to another? Through
-cherry-pick Which spring boot annotation is used to handle global
-exceptions? Controller advice When to use constructor initialization and
-when to getter and setter methods? Can we keep the methods inside
-interface private and protected? Serialization when exchanging data from
-java object to swagger/api: when a response is sent to the
+service discovery mechanism like DNS
+```  
+**Q155:** What is diff between instance variables and class variables?   
+**Q156:** What is rest assured?  
+**Q157:** What is method chaining?  
+**Q158:** What is time complexity and space complexity?  
+**Q159:** How to pick a commit from one branch and add it to another?  
+```
+Through cherry-pick
+```
+**Q160:** Which spring boot annotation is used to handle global exceptions?    
+**Q161:** When to use constructor initialization and when to getter and setter methods?  
+**Q162:** Can we keep the methods inside interface private and protected?  
+```
+Serialization when exchanging data from java object to swagger/api:
+when a response is sent to the
 Swagger/OpenAPI endpoint, it typically involves the serialization of
 Java objects. Typically through java pojo or DTOs The process of
 converting Java objects to JSON or XML is known as serialization.
-
-What is field and constructor injection? this is field injection and do
-not need final modifier, we can keep them with private to follow the
+```
+**Q163:** What is field and constructor injection?  
+```
+This is field injection and do not need final modifier, we can keep them with private to follow the
 encapsulation principles: @Autowired private UserService userService;
-and this is constructor injection: private final UserService
-userService; and then define the constructor for that
-
-How to stash the untracked files also (new files that are added)?
-through command: git stash -u What is fluent interface in java? If we
-cannot make object of interface then how we can autowired the repository
-interface? When you use @Autowired with a repository interface in
+and this is constructor injection: private final UserService userService;
+and then define the constructor for that
+```
+**Q164:** How to stash the untracked files also (new files that are added)?  
+```
+through command: git stash -u
+```
+**Q165:** What is fluent interface in java?  
+**Q166:** If we cannot make object of interface then how we can autowired the repository interface?  
+```
+When you use @Autowired with a repository interface in
 Spring, you're not directly creating an instance of the interface
 itself. Instead, Spring creates a proxy object that implements the
 repository interface for you. This proxy object delegates method calls
 to the actual implementation provided by Spring Data JPA.
-
-Can we make top level class in java static? In Java, you cannot declare
-a top-level class as static. The static keyword is only allowed for
-nested classes, interfaces, methods, and variables, but not for
-top-level classes. Can we make instance of java static class?
-
+```
+**Q167:** Can we make top level class in java static?  
+```
+In Java, you cannot declare a top-level class as static.
+The static keyword is only allowed for nested classes, interfaces, methods
+and variables, but not for top-level classes.
+```
+**Q168:** Can we make instance of java static class?  
+```
 Command to get visual representation and graph of git commits and
-changes: gitk Can we pass method as a parameter in java method? Yes
-through functional interface, example =
-processMethod(ReadLines::printHello);
-
-Define stack, queue, list, set, maps, graph and tree? What is difference
-between alter and update in sql? what is clone method in java? What is
-comparator and comparable in java? The linkedList that is built in java
-that is implementing list interface is singly or doubly? What is a
-method that we use to clear the screen? System.out.flush();
-
-Which method is used to start a thread? for establishing a thread we use
-start() and for execution we use run() How to connect two or more data
-bases in one spring boot application?
-
-What is big O of n (O(n)), big O of n square (O(n\^2)) , (O(1)) and
-O(log n)? Explain the difference between linear search and binary search
-in terms of time complexity? What is the maximum capacity of arraylist
-in java? What is OUTPUT, DELETED, INSERTED in sql? Can we define a class
+changes: gitk
+```
+**Q169:** Can we pass method as a parameter in java method?  
+```
+Through functional interface, example = processMethod(ReadLines::printHello);
+```
+**Q170:** Define stack, queue, list, set, maps, graph and tree?  
+**Q171:** What is difference between alter and update in sql?  
+**Q172:** what is clone method in java?  
+**Q173:** What is comparator and comparable in java?  
+**Q174:** The linkedList that is built in java that is implementing list interface is singly or doubly?  
+**Q175:** What is a method that we use to clear the screen?  
+**Q176:** Which method is used to start a thread?  
+```
+For establishing a thread we use
+start() and for execution we use run().
+```
+**Q177:** How to connect two or more data bases in one spring boot application?  
+**Q178:** What is big O of n (O(n)), big O of n square (O(n\^2)) , (O(1)) and O(log n)?  
+**Q179:** Explain the difference between linear search and binary search in terms of time complexity?  
+**Q180:** What is the maximum capacity of arraylist in java?  
+**Q181:** What is meant by coding/programming to the interface? 
+What is OUTPUT, DELETED, INSERTED in sql? Can we define a class
 inside java method? If we have parent and 4 multilevel child classes, we
 make the object of lowest child class, whose constructor will execute
 first? What is compile time polymorphism and run time polymorphism? What
