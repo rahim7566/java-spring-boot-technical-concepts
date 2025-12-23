@@ -683,68 +683,105 @@ start() and for execution we use run().
 **Q178:** What is big O of n (O(n)), big O of n square (O(n\^2)) , (O(1)) and O(log n)?  
 **Q179:** Explain the difference between linear search and binary search in terms of time complexity?  
 **Q180:** What is the maximum capacity of arraylist in java?  
-**Q181:** What is meant by coding/programming to the interface? 
-What is OUTPUT, DELETED, INSERTED in sql? Can we define a class
-inside java method? If we have parent and 4 multilevel child classes, we
-make the object of lowest child class, whose constructor will execute
-first? What is compile time polymorphism and run time polymorphism? What
-is early binding and late binding? What is composite key in database?
-What is the query to set foriegn key into the table? What is parent
-class of all exceptions? Define bi arguments variants of functional
-interfaces. How to change git branch name? What is clustered and non
-clustered in indexing in database?
+**Q181:** What is meant by coding/programming to the interface?  
+**Q182:** What is OUTPUT, DELETED, INSERTED in sql?  
+**Q183:** Can we define a class inside java method?  
+**Q184:** If we have parent and 4 multilevel child classes, we make the object of lowest child class,
+whose constructor will execute first?  
+**Q185:** What is compile time polymorphism and run time polymorphism?  
+**Q186:** What is early binding and late binding?  
+**Q187:** What is composite key in database?  
+**Q189:** What is the query to set foriegn key into the table?  
+**Q190:** What is parent class of all exceptions?  
+**Q192:** Define bi arguments variants of functional interfaces.  
+**Q193:** How to change git branch name?  
+**Q194:** What is clustered and non clustered in indexing in database?  
+**Q195:** What are the important features and uses of kubernetes in microservices?  
+```
+1. Container Orchestration
+2. Service Discovery and Load Balancing
+3. Automated Rollouts and Rollbacks
+4. Self-Healing
+5. Resource Management
+6. Configuration and Secret Management
+7. Networking and Security
+8. Logging and Monitoring
+9. Environment Consistency
+```
+```
+Summary: Kubernetes enhances the deployment, scaling, management,
+and operational efficiency of microservices by providing a comprehensive
+container orchestration platform. It automates many tasks associated with
+microservice management, improves resource utilization, ensures high availability,
+and supports continuous delivery practices, making it an essential tool for modern
+microservice architectures.
+```  
+**Q196:** What is the role of docker in microservices?  
+```
+1. Containerization
+2. Portability
+3. Dependency Management
+4. Microservice Scalability
+5. Development and Testing
+```
 
-What are the important features and uses of kubernetes in microservices?
-1 Container Orchestration 2 Service Discovery and Load Balancing 3
-Automated Rollouts and Rollbacks 4 Self-Healing 5 Resource Management 6
-Configuration and Secret Management 7 Networking and Security 8 Logging
-and Monitoring 9 Environment Consistency Summary: Kubernetes enhances
-the deployment, scaling, management, and operational efficiency of
-microservices by providing a comprehensive container orchestration
-platform. It automates many tasks associated with microservice
-management, improves resource utilization, ensures high availability,
-and supports continuous delivery practices, making it an essential tool
-for modern microservice architectures.
+**Q197:** What is feignclient in microservices?  
+**Q198:** What is the query to select coulumn names where the column contains letter a and b?  
+**Q199:** What is java API throttling?  
+**Q200:** What is snake case, pascal case, kebab case and camel case in naming conventions?  
+**Q201:** What are projections in spring boot?  
+**Q202:** What is elastic search?  
+**Q203:** What is meant by caching the value?  
+**Q204:** What is orchestrator approach in SRP?  
+**Q205:** What is flatMap in java streams?  
+**Q206:** What is Supplier, Accumulator, Combiner and Consumer in java?  
+```
+These are functional interfaces we use in streams that performs:
+ Supplier:
+ Supplies initial objects (e.g., new ArrayList\<\>()).
+ Accumulator: Adds elements into a mutable result container.
+ Combiner: Combines two partial results (used in parallel streams).
+ Consumer: Processes elements without returning a value.
+```
 
-what is the role of docker in microservices? 1 Containerization 2
-Portability 3 Dependency Management 4 Microservice Scalability 5
-Development and Testing
+Techniques to make less paramters in method call:
+```
+1. Encapsulation with Objects
+2. Using Builder Pattern
+3. Method Overloading
+4. Use of Optional and Default Values
+5. Dependency Injection
+6. Functional Interfaces and Lambdas
+7. Separation of Concerns
+```
 
-What is feignclient in microservices? what is the query to select
-coulumn names where the column contains letter a and b? What is java API
-throttling? What is snake case, pascal case, kebab case and camel case
-in naming conventions? What are projections in spring boot? What is
-elastic search? What is meant by caching the value? What is orchestrator
-approach in SRP? What is flatMap in java streams?
+New features introduced in java 17:
+```
+Sealed classes
+Record classes
+Pattern matching for instance of text blocks
+Enhanced switch expression
+```
 
-What is Supplier, Accumulator, Combiner and Consumer in java? These are
-functional interfaces we use in streams that performs: Supplier:
-Supplies initial objects (e.g., new ArrayList\<\>()). Accumulator: Adds
-elements into a mutable result container. Combiner: Combines two partial
-results (used in parallel streams). Consumer: Processes elements without
-returning a value.
+New features introduced in java 21:
+```
+Virtual threads
+More advanced pattern matching for switch conditions
+More advanced record patterns
+String templates
+```  
+**Q207:** What is parameter pollution?  
 
-Techniques to make less paramters in method call: 1. Encapsulation with
-Objects 2. Using Builder Pattern 3. Method Overloading 4. Use of
-Optional and Default Values 5. Dependency Injection 6. Functional
-Interfaces and Lambdas 7. Separation of Concerns
-
-New features introduced in java 17: sealed classes record classes
-pattern matching for instance of text blocks enhanced switch expression
-
-New features introduced in java 21: virtual threads more advanced
-pattern matching for switch conditions more advanced record patterns
-string templates
-
-What is parameter pollution?
-
-Basic git workflow: git switch feature \# Switch to the feature
-(working) branch from main branch git stash \# Stash any uncommitted
-changes (after doing changes) git pull --rebase origin main \# Pull and
-rebase with the latest main git stash pop \# Restore the stashed changes
-git add . \# Stage all changes git commit -m "Message" \# Commit the
-changes git push origin feature \# Push the branch to remote And then
-create a Merge/Pull request to merge working branch to main branch
+Basic git workflow:  
+```
+git switch feature            # Switch to the feature (working) branch from main branch
+git stash                     # Stash any uncommitted changes (after doing changes)
+git pull --rebase origin main # Pull and rebase with the latest main
+git stash pop                 # Restore the stashed changes
+git add .                     # Stage all changes
+git commit -m "Message"       # Commit the changes
+git push origin feature       # Push the branch to remote And then create a Merge/Pull request to merge working branch to main branch
+```
 
 Spring boot microservices security architecture: 🔍 The Role of
 AuthenticationWebFilter and ServerAuthenticationConverter 🧱 What Spring
