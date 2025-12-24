@@ -33,7 +33,7 @@ and contain no methods and fields.
 ```
 test your assumption about the program
 ```
-**Q28:** what is graceful shutdown in spring boot?
+**Q28:** what is graceful shutdown in spring boot?  
 **Q29:** How many spring boot have embedded servlet containers?  
 ```
 there are 3: tomcat, jetty and undertow
@@ -783,73 +783,93 @@ git commit -m "Message"       # Commit the changes
 git push origin feature       # Push the branch to remote And then create a Merge/Pull request to merge working branch to main branch
 ```
 
-Spring boot microservices security architecture: 🔍 The Role of
-AuthenticationWebFilter and ServerAuthenticationConverter 🧱 What Spring
-Security Does (Traditional Flow) When you use SecurityWebFilterChain in
-WebFlux: Incoming HTTP requests go through a chain of filters. One of
-these filters must: Extract the credentials (e.g., the JWT token). Wrap
-them in an Authentication object. Pass them to a
-ReactiveAuthenticationManager to authenticate. But by default, this
-filter doesn't exist unless you explicitly add it. That's where the
-AuthenticationWebFilter comes in.
+Spring boot microservices security architecture:
+```
+🔍 The Role of AuthenticationWebFilter and ServerAuthenticationConverter
+
+🧱 What Spring Security Does (Traditional Flow)
+When you use SecurityWebFilterChain in WebFlux: Incoming HTTP requests go through a chain of filters.
+One of these filters must:
+ -> Extract the credentials (e.g., the JWT token).
+ -> Wrap them in an Authentication object.
+ -> Pass them to a ReactiveAuthenticationManager to authenticate.
+But by default, this filter doesn't exist unless you explicitly add it.
+
+That's where the AuthenticationWebFilter comes in.
 
 🚫 What Happens Without It If you only set:
-.authenticationManager(jwtReactiveAuthenticationManager) ...but don't
-wire up the AuthenticationWebFilter, then: ✅ You have a way to validate
-a token. ❌ But there is no filter to intercept the request, extract the
-token, and actually call the authentication manager. The token stays
-hidden in the HTTP header. Nobody picks it up. So Spring thinks the
-request is anonymous, and authorization fails.
+.authenticationManager(jwtReactiveAuthenticationManager)
+...but don't wire up the AuthenticationWebFilter,
+then:
+
+✅ You have a way to validate a token.
+❌ But there is no filter to intercept the request, extract the
+   token, and actually call the authentication manager. The token stays
+   hidden in the HTTP header. Nobody picks it up. So Spring thinks the
+   request is anonymous, and authorization fails.
 
 🔥 Result: You always get Access Denied --- even with a valid token.
 
-✅ What AuthenticationWebFilter and
-ServerBearerTokenAuthenticationConverter Do Here's what they accomplish:
-🔄 AuthenticationWebFilter Sits in the security filter chain. Calls the
-ServerAuthenticationConverter to extract credentials. Passes them to the
-ReactiveAuthenticationManager. 🔍
-ServerBearerTokenAuthenticationConverter Extracts Authorization: Bearer
-`<token>`{=html} header. Converts it into a
-BearerTokenAuthenticationToken or UsernamePasswordAuthenticationToken.
-Allows the authentication manager to validate and authenticate the
-token.
+✅ What AuthenticationWebFilter and ServerBearerTokenAuthenticationConverter Do
+Here's what they accomplish:
 
-Together, they bridge the gap between incoming HTTP requests and your
-custom authentication logic. Imagine you built a perfect lock
-(ReactiveAuthenticationManager) for your house, but you never connected
-the doorknob (AuthenticationWebFilter) to the lock. People try to open
-the door with the right key (the token), but the lock is never even
+🔄 AuthenticationWebFilter Sits in the security filter chain. Calls the
+   ServerAuthenticationConverter to extract credentials. Passes them to the
+   ReactiveAuthenticationManager.
+🔍 ServerBearerTokenAuthenticationConverter Extracts Authorization:
+   Bearer `<token>`{=html} header. Converts it into a
+   BearerTokenAuthenticationToken or UsernamePasswordAuthenticationToken.
+   Allows the authentication manager to validate and authenticate the
+   token.
+
+Together, they bridge the gap between incoming HTTP requests and your custom authentication logic.
+Imagine you built a perfect lock (ReactiveAuthenticationManager) for your house,
+but you never connected the doorknob (AuthenticationWebFilter) to the lock.
+People try to open the door with the right key (the token), but the lock is never even
 touched. So they stay locked out.
 
-What is difference between spring mvc and spring webflux? What is
-reactive programming? What is mono and flux in reactive programming?
+```
 
-Every new important changes in every java LTS version: LTS Version Focus
-Areas Java 8 Lambdas, Streams, Time Java 11 Modularization, HTTP, var
-Java 17 Sealed, Records, Pattern Matching, Text Blocks Java 21 Virtual
-Threads, Pattern Matching (switch), Structured Concurrency
+**Q208:** What is difference between spring mvc and spring webflux?  
+**Q209:** What is reactive programming?  
+**Q210:** What is mono and flux in reactive programming?  
 
-What are the principles of reactive programming? Publisher: A Publisher
-is an entity that produces a stream of data. In a reactive system, this
-could be a service generating events or data over time. Subscriber: A
-Subscriber consumes data emitted by a Publisher. It reacts to data as it
-arrives, without blocking or waiting for it all to be available at once.
-Subscription: This represents the link between a Publisher and a
-Subscriber. It is how the Subscriber subscribes to the Publisher and
-starts receiving data. Processor: A Processor acts as both a Publisher
-and a Subscriber. It allows for data to be transformed as it flows
-through the stream. Backpressure: Reactive systems handle backpressure,
-which ensures that the system does not get overwhelmed by an excessive
-amount of data.
+Every new **important upgrades** in every java LTS version:
+| LTS Version   | Focus Areas |
+| ------------- | ------------- |
+| Java 8        | Lambdas, Streams, Time |
+| Java 11       | Modularization, HTTP, var  |
+| Java 17       | Sealed, Records, Pattern Matching, Text Blocks  |
+| Java 21       | Virtual Threads, Pattern Matching (switch), Structured Concurrency  |
 
-Important Regex Concepts and Patterns to Learn: 1. Basic Matching: .
-(Dot): Matches any character except newlines. Example: a.b matches acb,
+
+**Q211:** What are the principles of reactive programming?  
+```
+Publisher: A Publisher is an entity that produces a stream of data.
+In a reactive system, this could be a service generating events or data over time.
+
+Subscriber: A Subscriber consumes data emitted by a Publisher.
+It reacts to data as it arrives, without blocking or waiting for it all to be available at once.
+
+Subscription: This represents the link between a Publisher and a Subscriber.
+It is how the Subscriber subscribes to the Publisher and starts receiving data.
+
+Processor: A Processor acts as both a Publisher and a Subscriber.
+It allows for data to be transformed as it flows through the stream.
+
+Backpressure: Reactive systems handle backpressure, which ensures that the system
+does not get overwhelmed by an excessive amount of data.
+```
+
+**Important Regex Concepts and Patterns to Learn:**
+```
+1. Basic Matching:
+. (Dot): Matches any character except newlines. Example: a.b matches acb,
 axb, a b, etc.
-
 \^ and \$: Anchors that match the start \^ and end \$ of a string.
 Example: \^abc matches "abc" only at the start of a string.
 
-2.  Character Classes: \[a-z\]: Matches any lowercase letter.
+2. Character Classes: \[a-z\]: Matches any lowercase letter.
 
 `\d:`{=tex} Matches any digit (same as [0-9](Matches%20any%20digit.)).
 
@@ -858,8 +878,8 @@ underscores).
 
 `\s`{=tex}: Matches any whitespace character (spaces, tabs, etc.).
 
-3.  Quantifiers: \*: Matches 0 or more occurrences of the previous
-    character.
+3. Quantifiers: \*: Matches 0 or more occurrences of the previous
+character.
 
 +: Matches 1 or more occurrences of the previous character.
 
@@ -868,27 +888,29 @@ underscores).
 {n,m}: Matches between n and m occurrences of the previous character.
 Example: `\d{2,4}`{=tex} matches between 2 to 4 digits.
 
-4.  Grouping and Alternation: (): Groups patterns together. Example:
-    (abc\|def) matches either "abc" or "def".
+4. Grouping and Alternation: (): Groups patterns together. Example:
+(abc\|def) matches either "abc" or "def".
 
 \|: Alternation (OR). Example: a\|b matches either "a" or "b".
 
-5.  Assertions: Positive Lookahead (?=...): Matches a group only if it
-    is followed by another group. Example: `\d(`{=tex}?=`\D`{=tex})
-    matches a digit only if it's followed by a non-digit.
+5. Assertions: Positive Lookahead (?=...): Matches a group only if it
+is followed by another group. Example: `\d(`{=tex}?=`\D`{=tex})
+matches a digit only if it's followed by a non-digit.
 
 Negative Lookahead (?!...): Matches a group only if it is NOT followed
 by another group. Lookbehind (?\<=...): Matches a group only if it's
 preceded by another group. Negative Lookbehind (?\<!...): Matches a
 group only if it's NOT preceded by another group.
 
-6.  Escape Characters: Use  to escape special characters like ., \*, +,
-    etc. Example: . matches a literal dot (.), not any character.
+6. Escape Characters: Use  to escape special characters like ., \*, +,
+etc. Example: . matches a literal dot (.), not any character.
 
-What are private methods in java interfaces and when were they
-introduced?
+```
+
+**Q212:** What are private methods in java interfaces and when were they introduced?  
 
 Example illustration of Static method and instance variables of a class:
+```
 Static method: Think of a teacher standing in front of the class giving
 a lecture. The teacher is not associated with any specific student but
 is there for the class as a whole. Instance variable: A student's grade
@@ -900,20 +922,28 @@ student, but it's relevant to the entire class. A teacher (static
 method) cannot directly access the grades of students (instance
 variables) without asking each student individually (i.e., referencing
 each student's instance).
+```
 
-Can a class has default methods? What is completeable future in java?
-What is callable and runnable? What is executor services in java? What
-is life cycle of threads? NEW → RUNNABLE → RUNNING → (BLOCKED / WAITING
-/ TIMED_WAITING) → TERMINATED What is keyClock in java?
+**Q213:** Can a class has default methods? What is completeable future in java?  
+**Q214:** What is callable and runnable?  
+**Q215:** What is executor services in java?  
+**Q216:** What is life cycle of threads?
+```
+NEW → RUNNABLE → RUNNING → (BLOCKED / WAITING / TIMED_WAITING) → TERMINATED
+```
+**Q217:** What is keyClock in java?
 
-Rules for catching blocks in try catch statement: Catch blocks are
-checked top to bottom, and Java uses the first matching catch block. So
-if you put the general catch (Exception e) before a more specific one
+Rules for catching blocks in try catch statement:
+```
+Catch blocks are checked top to bottom, and Java uses the first matching catch block.
+So if you put the general catch (Exception e) before a more specific one
 (like catch (IOException e)), the specific one will be unreachable ---
 and the compiler will throw an error.
+```
 
-🔷 Key Techniques & Design Patterns in Java (especially Java 8+) 🔸 1.
-Factory Pattern (Creational) Purpose: Object creation is abstracted.
+🔷 Key Techniques & Design Patterns in Java (especially Java 8+)
+```
+🔸 1. Factory Pattern (Creational) Purpose: Object creation is abstracted.
 Where used: DriverManager.getConnection() Executors.newFixedThreadPool()
 Calendar.getInstance()
 
@@ -956,6 +986,8 @@ AbstractSet HttpServlet.doGet() and doPost() (Java EE)
 used: java.lang.reflect.Proxy (dynamic proxies --- common in Spring,
 AOP) RMI (Remote Method Invocation) JDBC connection pools (wrap/monitor
 actual connections)
+
+```
 
 Streams API (Java 8) Java 8 Streams --- how they work + intermediate vs
 terminal? The Streams API (a major Java 8 feature) applies several
