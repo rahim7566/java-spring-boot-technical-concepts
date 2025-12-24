@@ -989,30 +989,45 @@ actual connections)
 
 ```
 
-Streams API (Java 8) Java 8 Streams --- how they work + intermediate vs
-terminal? The Streams API (a major Java 8 feature) applies several
-patterns: Builder Pattern -- via Stream.Builder Pipeline Pattern --
-stream.filter().map().collect() Strategy Pattern -- via custom
-Comparator, Predicate, etc. Iterator Pattern -- internally abstracts
-traversal
+**Q217:** Streams API (Java 8) Java 8 Streams --- how they work + intermediate vs terminal?
+```
+The Streams API (a major Java 8 feature) applies several
+patterns:
+Builder Pattern -- via Stream.Builder
+Pipeline Pattern -- stream.filter().map().collect()
+Strategy Pattern -- via custom Comparator, Predicate, etc.
+Iterator Pattern -- internally abstracts traversal
+```
 
-Java SE and Java EE: If Java SE is your toolbox, Java EE is your
-workshop for building large-scale systems. Java SE includes: 1. Basic
-language features: String, Collections, Exceptions 2. I/O: File,
-InputStream, Reader, etc. 3. Concurrency: Thread, ExecutorService,
-synchronized, etc. 4. Networking: Socket, URL, etc. 5. JDBC: Connect to
-databases 6. JavaFX or AWT/Swing (for GUI) 7. Java 8+ features: Streams,
-Lambdas, Optional, etc.
+Java SE and Java EE:
+```
+If Java SE is your toolbox, Java EE is your
+workshop for building large-scale systems.
+Java SE includes:
+1. Basic language features: String, Collections, Exceptions
+2. I/O: File, InputStream, Reader, etc.
+3. Concurrency: Thread, ExecutorService, synchronized, etc.
+4. Networking: Socket, URL, etc.
+5. JDBC: Connect to databases
+6. JavaFX or AWT/Swing (for GUI)
+7. Java 8+ features: Streams,Lambdas, Optional, etc.
 
-Java EE includes: 1. Servlets (Web APIs) 2. JSP (JavaServer Pages) and
-JSF (JavaServer Faces) 3. EJB (Enterprise JavaBeans) (older component
-model) 4. JPA (Java Persistence API) -- ORM (like Hibernate) 5. JMS
-(Java Messaging Service) -- messaging between apps 6. JAX-RS / JAX-WS --
-REST and SOAP web services 7. CDI (Contexts and Dependency Injection) 8.
-Bean Validation, Security, and more
+Java EE includes:
+1. Servlets (Web APIs)
+2. JSP (JavaServer Pages) and JSF (JavaServer Faces)
+3. EJB (Enterprise JavaBeans) (older component model)
+4. JPA (Java Persistence API) -- ORM (like Hibernate)
+5. JMS (Java Messaging Service) -- messaging between apps
+6. JAX-RS / JAX-WS -- REST and SOAP web services
+7. CDI (Contexts and Dependency Injection)
+8. Bean Validation, Security, and more
 
-Example of encapsulation in java OOP design: Think of a Real-World
-Analogy: Imagine a vending machine: You can't open it and take snacks
+```
+
+Example of **encapsulation** in java OOP design:
+```
+Think of a Real-World Analogy:
+Imagine a vending machine: You can't open it and take snacks
 directly (like accessing public fields). Instead, you press buttons and
 insert money (like calling methods). The machine controls what happens
 --- it checks if you paid, if the item is available, etc. That's
@@ -1020,53 +1035,66 @@ encapsulation in action. You're interacting with a system, but you don't
 get to break or misuse it just because you can see it. so that means
 Encapsulation is not about restricting access completely --- it's about
 controlling behavior when access happens.
+```
 
-Concept of class loader in JVM: Think of the .java → .class compilation
-as baking a cake (you prepare the file ahead of time). This is done
-through java compiler (javac) The ClassLoader just takes the finished
-cake (the .class file) and serves it to the JVM --- it does not do any
-baking (compilation). So it loads the .class files into JVM
+Concept of **class loader** in JVM:
+```
+Think of the .java → .class compilation as baking a cake (you prepare the file ahead of time).
+This is done through java compiler (javac) The ClassLoader just takes the finished cake (the .class file)
+and serves it to the JVM --- it does not do any baking (compilation). So it loads the .class files into JVM
+```
 
-In Java, Method Overloading depends solely on: 1. Same method name 2.
-Different parameter list, which includes: Number of parameters Types of
-parameters Order of parameters (if types differ) Overloading Does Not
-Depend On but may have different: Return type Access modifier Exceptions
-thrown Parameter names
+**Q218:** What is covariant return in method overriding?  
+**Q219:** What is difference between generic type and unknown type in java generics?  
+**Q220:** What is server thread pool?  
 
-What is covariant return in method overriding? What is difference
-between generic type and unknown type in java generics? What is server
-thread pool?
+Difference of Spring MVC vs Spring WebFlux:
+```
+Example:
+Two Apps with the Same Logic
+App A: Spring MVC (blocking)
+App B: WebFlux (non-blocking)
+Both call a slow API or DB that takes 300ms
+Both return JSON response after the call
+Both will take \~300ms to return the response
 
-Example: Two Apps with the Same Logic App A: Spring MVC (blocking) App
-B: WebFlux (non-blocking) Both call a slow API or DB that takes 300ms
-Both return JSON response after the call Both will take \~300ms to
-return the response ❗ WebFlux won't make that faster --- but it will
-let more users be served during that time through server thread pool
-system in a server. By default, Spring WebFlux uses Netty as its
-embedded server.
+❗ WebFlux won't make that faster --- but it will
+   let more users be served during that time through server thread pool
+   system in a server. By default, Spring WebFlux uses Netty as its
+   embedded server.
+```
 
-What is servlet? A Servlet is a Java object that handles HTTP requests
+**Q221:** What is servlet?  
+```
+A Servlet is a Java object that handles HTTP requests
 and generates responses. It's part of the Java Servlet API --- a core
-part of Java EE (now Jakarta EE). In spring mvc, the servlet container
+part of Java EE (now Jakarta EE).
+In spring mvc, the servlet container
 is tomcat So Spring MVC is Servlet-based and Spring WebFlux is Reactive
+```
 
-Runnable thread: Method: void run() Usage: with Thread or
-ExecutorService Limitations: Cannot return a result or throw a checked
-exceptions
+**States of Thread:**
+```
+Runnable thread: Method: void run()
+Usage: with Thread or ExecutorService
+Limitations: Cannot return a result or throw a checked exceptions
 
-Callable thread: Method: v call() throws execption Usage:
-ExecutorService.submit() with returns future Can return a result and
-throw checked exceptions
+Callable thread: Method: v call() throws execption
+Usage: ExecutorService.submit() with returns future
+Can return a result and throw checked exceptions
 
-Future: Methods: get() : blocks until result is available Usage:
-Returned by submitting a Callable to an ExecutorService
+Future: Methods: get() : blocks until result is available
+Usage: Returned by submitting a Callable to an ExecutorService
 
 CompleteableFuture: Can be manually completed Supports chaining like
 thenApply(), thenAccept(), thenCompose()
+```
 
-Type Returns Result Can Throw Exception Asynchronous Cancelable
-Introduced In Type Runnable No No Yes No Java 1.0 Interface
-Callable`<V>`{=html} Yes Yes Yes Yes (via Future) Java 5 Interface
-Future`<V>`{=html} Yes (via get) No (itself doesn't throw) Yes Yes Java
-5 Interface CompletableFuture`<V>`{=html} Yes Yes Yes Yes Java 8 Class
-What is saga pattern?
+| Type                    | Returns Result        | Can Throw Exception | Asynchronous | Cancelable              | Introduced In | Kind      |
+|-------------------------|-----------------------|---------------------|--------------|--------------------------|---------------|-----------|
+| Runnable                | No                    | No                  | Yes          | No                       | Java 1.0      | Interface |
+| Callable<V>             | Yes                   | Yes                 | Yes          | Yes (via Future)         | Java 5        | Interface |
+| Future<V>               | Yes (via get)         | No                  | Yes          | Yes                      | Java 5        | Interface |
+| CompletableFuture<V>    | Yes                   | Yes                 | Yes          | Yes                      | Java 8        | Class     |
+ 
+**Q222:** What is saga pattern?
